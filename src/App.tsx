@@ -42,9 +42,7 @@ function App() {
           </li>)
         }
       </ul>
-      <p>
-        {code}
-      </p>
+      <pre style={{ backgroundColor: '#292d3e', color: 'white' }}>{code}</pre>
     </div>
   );
 }

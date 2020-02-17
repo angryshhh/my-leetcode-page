@@ -42,7 +42,14 @@ function App() {
           </li>)
         }
       </ul>
-      <pre style={{ backgroundColor: '#292d3e', color: 'white' }}>{code}</pre>
+      <code>
+        <pre>{code}</pre>
+      </code>
+      {/* <pre style={{ backgroundColor: '#292d3e', color: 'white' }}>{code}</pre>
+      <code style={{ backgroundColor: '#292d3e', color: 'white' }}>{code}</code>
+      <pre>
+        <code style={{ backgroundColor: '#292d3e', color: 'white' }}>{code}</code>
+      </pre> */}
     </div>
   );
 }

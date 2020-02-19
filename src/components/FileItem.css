@@ -1,0 +1,9 @@
+.FileItem {
+  margin: 0 10px;
+  padding: 9px 10px;
+  border-top: 1px solid #ffffff;
+}
+
+.FileItem:first-child {
+  border-top: none;
+}

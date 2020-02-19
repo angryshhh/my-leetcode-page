@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FileItem from '../components/FileItem';
 import './Sider.css';
 
 interface GitFileInfo {
@@ -15,9 +16,11 @@ const Sider: React.FC<Props> = (props) => {
 
   return <div className="Sider">
     {
-      props.gitFileList.slice(0, showedFilesNum).map(gitFileInfo => <button>
-        {gitFileInfo.name.slice(0, -3)}
-      </button>)
+      props.gitFileList.slice(0, showedFilesNum)
+      .map(gitFileInfo => <FileItem 
+        key={parseInt(gitFileInfo.name)} 
+        fileInfo={gitFileInfo}
+      />)
     }
     <button onClick={() => setShowedFilesNum(showedFilesNum + 10)}>更多</button>
   </div>

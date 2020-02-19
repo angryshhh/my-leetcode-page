@@ -4,29 +4,29 @@ import Content from './layouts/Content';
 import Axios from 'axios';
 import './App.css';
 
-interface GitFile {
+interface GitFileInfo {
   name: string;
   url: string;
 }
 
 function App() {
   // const [code, setCode] = useState('');
-  // const [fileList, setFileList] = useState(new Array<GitFile>());
+  const [fileList, setFileList] = useState(new Array<GitFileInfo>());
 
-  // useEffect(() => {
-  //   Axios
-  //   .get('https://api.github.com/repos/angryshhh/my-leetcode/contents')
-  //   .then(({data}) => {
-  //     data.pop(); // remove README.md
-  //     data.sort((a: GitFile, b: GitFile) => parseInt(a.name) - parseInt(b.name));
-  //     setFileList(data);
-  //   })
-  //   .catch(err => console.log(err));
-  // }, []);
+  useEffect(() => {
+    Axios
+    .get('https://api.github.com/repos/angryshhh/my-leetcode/contents')
+    .then(({data}) => {
+      data.pop(); // remove README.md
+      data.sort((a: GitFileInfo, b: GitFileInfo) => parseInt(a.name) - parseInt(b.name));
+      setFileList(data);
+    })
+    .catch(err => console.log(err));
+  }, []);
 
   return (
     <div className="App">
-      <Sider />
+      <Sider gitFileList={fileList} />
       <Content />
       {/* <ul>
         {

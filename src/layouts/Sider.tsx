@@ -1,28 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useTypedSelector } from '../store';
+import { setShowedFilesNum } from '../store/git-file/actions';
 import FileItem from '../components/FileItem';
 import './Sider.css';
 
-interface GitFileInfo {
-  name: string;
-  url: string;
-}
-
-interface Props {
-  gitFileList: Array<GitFileInfo>;
-}
-
-const Sider: React.FC<Props> = (props) => {
-  const [showedFilesNum, setShowedFilesNum] = useState(10);
+const Sider: React.FC = () => {
+  const gitFile = useTypedSelector(state => state.gitFile);
+  const dispatch = useDispatch();
 
   return <div className="Sider">
     {
-      props.gitFileList.slice(0, showedFilesNum)
+      gitFile.gitFileList.slice(0, gitFile.showedFilesNum)
       .map(gitFileInfo => <FileItem 
         key={parseInt(gitFileInfo.name)} 
         fileInfo={gitFileInfo}
       />)
     }
-    <button onClick={() => setShowedFilesNum(showedFilesNum + 10)}>更多</button>
+    <button onClick={() => dispatch(setShowedFilesNum(gitFile.showedFilesNum + 10))}>更多</button>
   </div>
 };
 

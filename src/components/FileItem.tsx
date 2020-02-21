@@ -1,19 +1,31 @@
 import React from 'react';
+import Axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { GitFileInfo } from '../store/git-file/type';
+import { setCode } from '../store/code/actions';
 import './FileItem.css';
-
-interface GitFileInfo {
-  name: string;
-  url: string;
-}
 
 interface Props {
   fileInfo: GitFileInfo;
 }
 
 const FileItem: React.FC<Props> = (props) => {
+  const dispatch = useDispatch();
+
   return <div 
     className="FileItem"
-    onClick={() => console.log(props.fileInfo.url)}
+    onClick={() => {
+      Axios
+        .get(props.fileInfo.url)
+        .then(({data}) => {
+          dispatch(setCode({
+            content: Buffer.from(data.content, data.encoding).toString(),
+            url: props.fileInfo.url,
+            name: props.fileInfo.name,
+          }));
+        })
+        .catch(err => console.log(err));
+    }}
   >
     {/* remove '.js' */}
     {props.fileInfo.name.slice(0, -3)}

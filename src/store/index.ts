@@ -5,7 +5,7 @@ import { gitFileReducer } from './git-file/reducers';
 import { codeReducer } from './code/reducers';
 
 export const rootReducer = combineReducers({
-  gitFile: gitFileReducer,
+  gitFileState: gitFileReducer,
   codeState: codeReducer,
 });
 

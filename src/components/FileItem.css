@@ -1,7 +1,13 @@
 .FileItem {
+  display: block;
   margin: 0 10px;
+  color: rgba(117, 124, 161);
   padding: 9px 10px;
   border-top: 1px solid #ffffff;
+}
+
+a {
+  text-decoration: none;
 }
 
 .FileItem:first-child {

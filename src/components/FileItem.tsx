@@ -12,9 +12,11 @@ interface Props {
 const FileItem: React.FC<Props> = (props) => {
   const dispatch = useDispatch();
 
-  return <div 
+  return <a
+    href="showCode"
     className="FileItem"
-    onClick={() => {
+    onClick={e => {
+      e.preventDefault();
       Axios
         .get(props.fileInfo.url)
         .then(({data}) => {
@@ -29,7 +31,7 @@ const FileItem: React.FC<Props> = (props) => {
   >
     {/* remove '.js' */}
     {props.fileInfo.name.slice(0, -3)}
-  </div>;
+  </a>;
 }
 
 export default FileItem;

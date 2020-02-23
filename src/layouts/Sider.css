@@ -4,4 +4,25 @@
   height: 100%;
   width: 200px;
   overflow: auto;
+  border-right: 1px solid #000000;
+}
+
+/* scrollbar total style */
+.Sider::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* mouse hover sider */
+.Sider:hover::-webkit-scrollbar-thumb {
+  background: rgba(45, 48, 65);
+}
+
+/* mouse hover scrollbar thumb */
+.Sider::-webkit-scrollbar-thumb:hover {
+  background: rgba(35, 38, 52);
+}
+
+/* click or drag the scrollbar thumb */
+.Sider::-webkit-scrollbar-thumb:active {
+  background: rgba(128, 203, 196);
 }

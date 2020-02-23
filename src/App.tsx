@@ -16,39 +16,13 @@ function App() {
       data.pop(); // remove README.md
       dispatch(setFileList(data));
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log('file list wrong' + err));
   }, [dispatch]);
 
   return (
     <div className="App">
       <Sider />
       <Content />
-      {/* <ul>
-        {
-          fileList.map(gitFile => <li
-            key={parseInt(gitFile.name)}
-          >
-            <button
-              onClick={() => {
-                Axios
-                .get(gitFile.url)
-                .then(({data}) => {
-                  setCode(Buffer.from(data.content, data.encoding).toString());
-                })
-                .catch(err => console.log(err));
-              }}
-            >{gitFile.name}</button>
-          </li>)
-        }
-      </ul>
-      <code>
-        <pre>{code}</pre>
-      </code> */}
-      {/* <pre style={{ backgroundColor: '#292d3e', color: 'white' }}>{code}</pre>
-      <code style={{ backgroundColor: '#292d3e', color: 'white' }}>{code}</code>
-      <pre>
-        <code style={{ backgroundColor: '#292d3e', color: 'white' }}>{code}</code>
-      </pre> */}
     </div>
   );
 }

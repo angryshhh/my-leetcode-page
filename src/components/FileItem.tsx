@@ -26,7 +26,7 @@ const FileItem: React.FC<Props> = (props) => {
             name: props.fileInfo.name,
           }));
         })
-        .catch(err => console.log(err));
+        .catch(err => console.log('get code wrong' + err));
     }}
   >
     {/* remove '.js' */}

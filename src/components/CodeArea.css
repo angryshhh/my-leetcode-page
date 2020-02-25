@@ -5,3 +5,24 @@
   padding: 0 13px;
   color: white;
 }
+
+.CodeArea::-webkit-scrollbar {
+  width: 15px;
+}
+
+.CodeArea:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+/* mouse hover scrollbar thumb */
+.CodeArea::-webkit-scrollbar-thumb:hover {
+  background: rgba(35, 38, 52);
+}
+
+/* click or drag the scrollbar thumb */
+.CodeArea::-webkit-scrollbar-thumb:active {
+  background: rgba(128, 203, 196);
+}
+
+.CodeArea::-webkit-scrollbar-corner {
+  display: none;
+}

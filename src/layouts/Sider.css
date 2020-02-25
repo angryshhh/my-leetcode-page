@@ -17,6 +17,7 @@
   background: rgba(45, 48, 65);
 }
 
+
 /* mouse hover scrollbar thumb */
 .Sider::-webkit-scrollbar-thumb:hover {
   background: rgba(35, 38, 52);
@@ -25,4 +26,8 @@
 /* click or drag the scrollbar thumb */
 .Sider::-webkit-scrollbar-thumb:active {
   background: rgba(128, 203, 196);
+}
+
+.Sider::-webkit-scrollbar-corner {
+  display: none;
 }

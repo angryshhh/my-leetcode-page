@@ -16,7 +16,10 @@ function App() {
       data.pop(); // remove README.md
       dispatch(setFileList(data));
     })
-    .catch(err => console.log('file list wrong' + err));
+    .catch(err => {
+      alert('Github refuse to give the file list, retry again later.');
+      // console.log('file list wrong' + err)
+    });
   }, [dispatch]);
 
   return (

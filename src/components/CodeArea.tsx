@@ -11,19 +11,23 @@ const CodeArea = () => {
 
   useEffect(() => {
     document.querySelectorAll('pre code').forEach(block => {
-      console.log(codeState.code.content)
       hljs.highlightBlock(block);
     });
   });
   
-  
-  
   return <div className="CodeArea">
-    <pre>
-      <code className="javascript">
-        {codeState.code.content}
-      </code>
-    </pre>
+    {
+      codeState.code.content ?
+      <pre>
+        <code className="Indexes">
+          {codeState.code.content.split('\n').map((line, index) => `${index + 1}`).join('\n')}
+        </code>
+        <code className="CodeLines javascript">
+          {codeState.code.content}
+        </code>
+      </pre> :
+      null
+    }
   </div>;
 };
 

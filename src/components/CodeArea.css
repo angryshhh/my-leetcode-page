@@ -6,6 +6,33 @@
   color: white;
 }
 
+.CodeArea pre {
+  display: flex;
+}
+
+.CodeArea pre code {
+  /* highlight render code line height with 19px,
+  but somehow there would be some lines with wrong height
+  making the index and code line don't match
+  so here make every line height of the code node bigger than 20px
+  every line rendered by highlight will still try to be 19px height
+  but the line containing it is higher than it
+  */
+  line-height: 20px;
+}
+
+.Indexes {
+  user-select: none;
+}
+
+.Indexes span {
+  float: right;
+}
+
+.CodeLines {
+  flex-grow: 1;
+}
+
 .CodeArea::-webkit-scrollbar {
   width: 15px;
 }

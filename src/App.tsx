@@ -18,7 +18,7 @@ function App() {
     })
     .catch(err => {
       alert('Github refuse to give the file list, retry again later.');
-      // console.log('file list wrong' + err)
+      console.log(err);
     });
   }, [dispatch]);
 

@@ -26,7 +26,10 @@ const FileItem: React.FC<Props> = (props) => {
             name: props.fileInfo.name,
           }));
         })
-        .catch(err => console.log('get code wrong' + err));
+        .catch(err => {
+          alert('Github refuse to give the file, retry again later.');
+          console.log(err);
+        });
     }}
   >
     {/* remove '.js' */}

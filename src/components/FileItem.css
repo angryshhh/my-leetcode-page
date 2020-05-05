@@ -1,9 +1,18 @@
 .FileItem {
   display: block;
-  margin: 0 10px;
+  /* margin: 0 10px; */
   color: rgba(117, 124, 161);
   padding: 9px 10px;
-  border-top: 1px solid #ffffff;
+  /* border-top: 1px solid #ffffff; */
+
+  /* cover overflowed text with '...' */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.FileItem:hover {
+  color: #ffffff;
 }
 
 a {

@@ -2,35 +2,7 @@
   overflow: auto;
   height: 100%;
   background-color: #292d3e;
-  padding: 0 13px;
   color: white;
-}
-
-.CodeArea pre {
-  display: flex;
-}
-
-.CodeArea pre code {
-  /* highlight render code line height with 19px,
-  but somehow there would be some lines with wrong height
-  making the index and code line don't match
-  so here make every line height of the code node bigger than 20px
-  every line rendered by highlight will still try to be 19px height
-  but the line containing it is higher than it
-  */
-  line-height: 20px;
-}
-
-.Indexes {
-  user-select: none;
-}
-
-.Indexes span {
-  float: right;
-}
-
-.CodeLines {
-  flex-grow: 1;
 }
 
 .CodeArea::-webkit-scrollbar {
@@ -51,5 +23,58 @@
 }
 
 .CodeArea::-webkit-scrollbar-corner {
+  display: none;
+}
+
+.CodeArea pre {
+  display: flex;
+  margin: 0;
+}
+
+.CodeArea pre code {
+  /* highlight render code line height with 19px,
+  but somehow there would be some lines with wrong height
+  making the index and code line don't match
+  so here make every line height of the code node bigger than 20px
+  every line rendered by highlight will still try to be 19px height
+  but the line containing it is higher than it
+  */
+  line-height: 20px;
+}
+
+.Indexes {
+  user-select: none;
+  padding-left: 13px;
+  flex-shrink: 0;
+}
+
+.Indexes span {
+  float: right;
+}
+
+.CodeLines {
+  flex-grow: 1;
+}
+
+.CodeLines::-webkit-scrollbar {
+  width: 15px;
+  position: absolute;
+  bottom: 0;
+}
+
+.CodeLines:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+/* mouse hover scrollbar thumb */
+.CodeLines::-webkit-scrollbar-thumb:hover {
+  background: rgba(35, 38, 52);
+}
+
+/* click or drag the scrollbar thumb */
+.CodeLines::-webkit-scrollbar-thumb:active {
+  background: rgba(128, 203, 196);
+}
+
+.CodeLines::-webkit-scrollbar-corner {
   display: none;
 }

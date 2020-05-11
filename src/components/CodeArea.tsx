@@ -20,7 +20,7 @@ const CodeArea = () => {
       codeState.code.content ?
       <pre>
         <code className="Indexes">
-          {codeState.code.content.split('\n').map((line, index) => `${index + 1}`).join('\n')}
+          {codeState.code.content.split('\n').map((line, index) => index + 1).join('\n')}
         </code>
         <code className="CodeLines javascript">
           {codeState.code.content}
